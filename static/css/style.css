@@ -19,3 +19,118 @@ pre code { font-size: 0.9rem;
            width: 52.5%;
            margin-left: 2.5%;
            overflow-x: auto; }
+
+
+/*
+Styles related to Deep Thought's customization of this theme.
+*/
+
+body {
+  background: #fffffd;
+  padding-top: 70px;
+}
+
+/* Primary navigation bar. */
+.mast {
+  position: absolute;
+  width: 100%;
+  background: #fffffd;
+  display: block;
+  top: 0;
+  left: 0;
+  padding: 0;
+  z-index: 8;
+  height: 70px;
+  border-bottom: solid 1px #eee;
+}
+
+.mast > .content {
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
+.mast > .content > .logo {
+  float: left;
+}
+
+.mast > .content > .nav {
+  float: right;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  align-items: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  letter-spacing: .03em;
+  font-size: 1.2rem;
+}
+
+.mast > .content > .nav > li {
+  display: inline-block;
+  padding: 0 1.5rem;
+  height: 70px;
+  line-height: 70px;
+}
+
+.mast > .content > .nav > li > a {
+  background: none;
+  transition: color .42s cubic-bezier(.165,.84,.44,1)
+}
+
+.mast > .content > .nav > li > a:hover {
+  color: #3f46ae;
+}
+
+/* Homepage */
+.subscribe {
+  margin: 32px 0;
+  max-width: 693px;
+  width: 100%;
+  background: #fafafa;
+  border-radius: 3px;
+  border: solid 1px #efefef;
+  padding: 16px;
+}
+
+#mc_embed_signup form{
+  padding: 10px 0;
+  text-align: center;
+}
+
+#mc_embed_signup input.email, #mc_embed_signup input.button {
+  margin: 16px auto;
+  outline: 0;
+  font-size: 1rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+}
+
+#mc_embed_signup label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-style: italic;
+  padding-bottom: 0;
+}
+
+/* Styles for detail view of posts. */
+.post-header {
+  font-weight: 700;
+}
+
+.post-meta {
+  padding: 0 4px;
+  font-size: 1.2rem;
+}
+
+.post-tags > a {
+  background: none;
+  font-style: italic;
+  color: #3f46ae;
+}
+
+.middot-divider {
+  padding-right: .3em;
+}
+
+.middot-divider:after {
+  content: '\00B7';
+}

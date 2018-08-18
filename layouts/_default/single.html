@@ -1,17 +1,25 @@
 {{ define "title" }}{{ .Title | markdownify }} | {{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
-{{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
+{{ $dateFormat := default "Jan 2, 2006" (index .Site.Params "date_format") }}
 
 <article>
   <header>
-    <h2>{{ .Title | markdownify }}</h2>
-    <p><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dateFormat }}</time> by {{ .Params.author | default .Site.Params.author }}{{ if or (.Params.categories) (.Params.tags) }} in {{ partial "meta-terms.html" . }}{{ end }}</p>
-  </header>
+    <h1 class="post-header">{{ .Title | markdownify }}</h1>
+    <div class="post-meta sans">
+      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dateFormat }}</time>
+      <span class="middot-divider"></span>
+      <span>{{ .ReadingTime }} minute read</span>
+    </div>
+<!--     <p> by {{ .Params.author | default .Site.Params.author }}</p>
+ -->  </header>
 
   <section>
     {{ .Content }}
   </section>
+  <div class="post-meta sans post-tags">
+    Tagged {{ if or (.Params.categories) (.Params.tags) }} in {{ partial "meta-terms.html" . }}{{ end }}
+  </div>
 </article>
 
 {{ end }}
