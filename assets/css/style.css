@@ -84,7 +84,7 @@ body {
 /* Homepage */
 .subscribe {
   margin: 32px 0;
-  max-width: 693px;
+  max-width: 660px;
   width: 100%;
   background: #fafafa;
   border-radius: 3px;
@@ -116,9 +116,21 @@ body {
   font-weight: 700;
 }
 
+.post-header--mini {
+  padding: 1rem 0;
+}
+
 .post-meta {
-  padding: 0 4px;
   font-size: 1.2rem;
+}
+
+.post-meta--muted {
+  font-size: 1rem;
+  color: #555;
+}
+
+.post-meta--padded {
+  padding: 0 4px;
 }
 
 .post-tags > a {
@@ -133,4 +145,9 @@ body {
 
 .middot-divider:after {
   content: '\00B7';
+}
+
+.readmore {
+  background: none !important;
+  font-style: italic;
 }

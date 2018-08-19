@@ -8,10 +8,13 @@
 
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
-    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-    <link href="{{ .Site.BaseURL }}css/tufte.css" rel="stylesheet">
-    <link href="{{ .Site.BaseURL }}css/latex.css" rel="stylesheet">
-    <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
+    {{ $mcCSS :=  resources.Get "css/mailchimp.css" }}
+    {{ $tufteCSS :=  resources.Get "css/tufte.css" }}
+    {{ $latexCSS := resources.Get "css/latex.css" }}
+    {{ $styleCSS := resources.Get "css/style.css" }}
+
+    {{ $bundle := slice $mcCSS $tufteCSS $latexCSS $styleCSS | resources.Concat "css/bundle.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $bundle.Permalink }}" integrity="{{ $bundle.Data.Integrity }}">
 
     {{ if .RSSLink }}
     {{ "<!-- RSS 2.0 feed -->" | safeHTML }}
@@ -25,6 +28,8 @@
     {{ block "main" . }}
       <!-- The part of the page that begins to differ between templates -->
     {{ end }}
+
+    {{ template "_internal/google_analytics_async.html" . }}
 
   </body>
 
