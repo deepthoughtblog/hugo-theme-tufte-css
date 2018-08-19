@@ -133,10 +133,14 @@ body {
   padding: 0 4px;
 }
 
-.post-tags > a {
+.post-tags  a {
   background: none;
   font-style: italic;
   color: #3f46ae;
+}
+
+.tag-collection {
+  margin: 10px 0;
 }
 
 .middot-divider {

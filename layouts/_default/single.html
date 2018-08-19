@@ -17,7 +17,7 @@
     {{ .Content }}
   </section>
   <div class="post-meta sans post-tags">
-    Tagged {{ if or (.Params.categories) (.Params.tags) }} in {{ partial "meta-terms.html" . }}{{ end }}
+    {{ if or (.Params.categories) (.Params.tags) }} {{ partial "meta-terms.html" . }} {{ end }}
   </div>
   {{ partial "subscribe.html" . }}
 </article>
