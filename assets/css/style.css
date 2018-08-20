@@ -10,6 +10,7 @@
  * equivalent padding to any <h2> tags, as those are explicitly used for section
  * headings in Tufte CSS. It's not pixel perfect with the example given in Tufte
  * CSS, but it's close. */
+
 h2 { padding-top: 2rem; }
 
 /* Tufte CSS uses <pre class="code">, but Markdown generates <pre><code>. We can
@@ -51,6 +52,17 @@ body {
 
 .mast > .content > .logo {
   float: left;
+}
+
+.mast > .content > .logo > a {
+  background: none;
+  display: block;
+  padding: 10px 0;
+}
+
+.mast > .content > .logo > a > img {
+  display: block;
+  height: 50px;
 }
 
 .mast > .content > .nav {
