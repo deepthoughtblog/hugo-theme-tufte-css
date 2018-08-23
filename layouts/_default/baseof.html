@@ -29,6 +29,25 @@
       <!-- The part of the page that begins to differ between templates -->
     {{ end }}
 
+    <script>
+      function toggleMobileNav() {
+        var menuEl = document.getElementById('mobile-nav')
+        var isHidden = window.getComputedStyle(menuEl).display === 'none'
+        if (isHidden) {
+          menuEl.style.display = 'block'
+        } else {
+          menuEl.style.display = 'none'
+        }
+      }
+      function setupMenu() {
+        var menuButton = document.getElementById('nav-menu')
+        menuButton.addEventListener('click', toggleMobileNav)
+      }
+      window.onload = function () {
+        setupMenu()
+      }
+    </script>
+
     {{ template "_internal/google_analytics_async.html" . }}
 
   </body>
