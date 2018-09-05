@@ -67,7 +67,7 @@ body {
   height: 50px;
 }
 
-.mast > .content > .nav {
+.nav {
   float: right;
   list-style: none;
   margin: 0 auto;
@@ -79,19 +79,19 @@ body {
   font-size: 1.2rem;
 }
 
-.mast > .content > .nav > li {
+.nav > li {
   display: inline-block;
   padding: 0 1.5rem;
   height: 70px;
   line-height: 70px;
 }
 
-.mast > .content > .nav > li > a {
+.nav > li > a {
   background: none;
   transition: color .42s cubic-bezier(.165,.84,.44,1)
 }
 
-.mast > .content > .nav > li > a:hover {
+.nav > li > a:hover {
   color: #3f46ae;
 }
 
@@ -99,10 +99,11 @@ body {
   display: none;
   background: rgba(255, 255, 253, 0.95);
   width: 100%;
-  position: fixed;
   height: 100%;
   top: 71px;
   padding: 0;
+  border-bottom: solid 1px #eee;
+  margin-bottom: 24px;
 }
 
 .nav--mobile > li {
@@ -156,7 +157,11 @@ body {
 }
 
 #mc_embed_signup .button {
-  background-color: #3f46ae;
+  background-color: #333;
+}
+
+#mc_embed_signup .button:hover {
+  background-color: #111;
 }
 
 /* Styles for detail view of posts. */
