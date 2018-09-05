@@ -209,6 +209,27 @@ body {
   font-style: italic;
 }
 
+/* Paginator */
+.pagination {
+  list-style: none;
+  padding: 0;
+}
+
+.pagination > li {
+  display: inline-block;
+}
+
+.pagination > li + li {
+  margin-left: 16px;
+}
+
+.pagination__item--next > a, .pagination__item--last > a,
+.pagination__item--previous > a, .pagination__item--first > a,
+.pagination__item--current > a {
+  background: none;
+}
+
+
 /* Responsiveness must be maintained*/
 @media (max-width: 980px) {
   .mast .nav {
