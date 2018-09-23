@@ -12,8 +12,9 @@
     {{ $tufteCSS :=  resources.Get "css/tufte.css" }}
     {{ $latexCSS := resources.Get "css/latex.css" }}
     {{ $styleCSS := resources.Get "css/style.css" }}
+    {{ $syntaxCSS := resources.Get "css/syntax.css" }}
 
-    {{ $bundle := slice $mcCSS $tufteCSS $latexCSS $styleCSS | resources.Concat "css/bundle.css" | minify | fingerprint }}
+    {{ $bundle := slice $mcCSS $tufteCSS $latexCSS $styleCSS $syntaxCSS | resources.Concat "css/bundle.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $bundle.Permalink }}" integrity="{{ $bundle.Data.Integrity }}" crossorigin="anonymous">
 
     {{ if .RSSLink }}
